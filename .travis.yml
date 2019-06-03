@@ -23,4 +23,4 @@ deploy:
     on:
         branch: master 
 after_deploy:
-  - ssh -i deploy_rsa -p $server_port $server_user@$server_ip 'sudo systemctl restart art-test.service'
+  - ssh -i deployb_rsa -p $server_port $server_user@$server_ip 'sudo systemctl restart art-test.service'
