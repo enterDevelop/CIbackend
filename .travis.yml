@@ -4,7 +4,9 @@ sudo: required
 mono: none
 dotnet: 2.1.502
 script:
-  - dotnet restore
-  - dotnet build
-  - dotnet publish -c Release
-
+- dotnet restore
+- dotnet build
+- dotnet publish -c Release
+before_install:
+- openssl aes-256-cbc -K $encrypted_6fba2295f277_key -iv $encrypted_6fba2295f277_iv
+  -in deployb_rsa.enc -out deployb_rsa -d
