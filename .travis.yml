@@ -18,7 +18,7 @@ before_deploy:
 deploy:
     provider: script
     skip_cleanup: true
-    script: rsync -r --delete-after -e "ssh -i deployb_rsa -p $server_port" $TRAVIS_BUILD_DIR/backendHackathone/bin/Release/netcoreapp2.1/publish/
+    script: rsync -r --delete-after -e "ssh -i deployb_rsa -p $server_port" $TRAVIS_BUILD_DIR/CIbackend/bin/Release/netcoreapp2.1/publish/
         $server_user@$server_ip:/home/$server_user/www/articleappb/publish
     on:
         branch: master 
